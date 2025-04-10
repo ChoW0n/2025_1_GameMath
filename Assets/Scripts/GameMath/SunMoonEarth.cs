@@ -6,17 +6,17 @@ public class SunMoonEarth : MonoBehaviour
 {
     public Transform centorObject;
     public float angle = 0f;    
-    public float speed = 5f;    //°øÀü ¼Óµµ
-    public float radius = 10f;  //¼¾ÅÍ ¿ÀºêÁ§Æ®¿ÍÀÇ °Å¸®(¹İ°æ)
+    public float speed = 5f;    //ê³µì „ ì†ë„
+    public float radius = 10f;  //ì„¼í„° ì˜¤ë¸Œì íŠ¸ì™€ì˜ ê±°ë¦¬(ë°˜ê²½)
     void Update()
     {
-        angle += Time.deltaTime * speed;        //È¸Àü °¢µµ º¯°æ
+        angle += Time.deltaTime * speed;        //íšŒì „ ê°ë„ ë³€ê²½
         float radians = angle * Mathf.Rad2Deg;  //Degree to Radian
-        //¿øÀ» ±×¸®´Â ¹æ¹ı x = ÄÚ»çÀÎ(0) * ¹İ°æ z = »çÀÎ(0) * ¹İ°æ
+        //ì›ì„ ê·¸ë¦¬ëŠ” ë°©ë²• x = ì½”ì‚¬ì¸(0) * ë°˜ê²½ z = ì‚¬ì¸(0) * ë°˜ê²½
         float x = Mathf.Cos(radians) * radius;
         float z = Mathf.Sin(radians) * radius;
 
-        //Áß½ÉÀ¸·Î ¼³Á¤ÇÑ ¿ÀºêÁ§Æ®¸¦ ±âÁØÀ¸·Î °øÀüÇÔ
+        //ì¤‘ì‹¬ìœ¼ë¡œ ì„¤ì •í•œ ì˜¤ë¸Œì íŠ¸ë¥¼ ê¸°ì¤€ìœ¼ë¡œ ê³µì „í•¨
         transform.position = centorObject.position + new Vector3(x, 0, z);
     }
 }

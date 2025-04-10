@@ -7,7 +7,7 @@ public class AutoRotation : MonoBehaviour
 {
     public float rotationSpeed = 90f;
 
-    //y ÃàÀ» ±âÁØÀ¸·Î 1ÃÊ ¸¶´Ù 45µµ È¸Àü
+    //y ì¶•ì„ ê¸°ì¤€ìœ¼ë¡œ 1ì´ˆ ë§ˆë‹¤ 45ë„ íšŒì „
     void Update()
     {
         //float input = Input.GetAxis("Horizontal");

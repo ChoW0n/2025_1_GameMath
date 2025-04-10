@@ -5,8 +5,8 @@ using UnityEngine;
 public class AiFovDetectector : MonoBehaviour
 {
     public Transform player;
-    public float viewAngle = 60f;       //½Ã¾ß°¢
-    public float viewDistance = 10f;    //½Ã¾ß°Å¸®
+    public float viewAngle = 60f;       //ì‹œì•¼ê°
+    public float viewDistance = 10f;    //ì‹œì•¼ê±°ë¦¬
 
     void Update()
     {
@@ -19,7 +19,7 @@ public class AiFovDetectector : MonoBehaviour
 
         if (angle < viewAngle / 2 && distance < viewDistance)
         {
-            Debug.Log("ÇÃ·¹ÀÌ¾î°¡ ½Ã¾ß ¾È¿¡ ÀÖÀ½!");
+            Debug.Log("í”Œë ˆì´ì–´ê°€ ì‹œì•¼ ì•ˆì— ìˆìŒ!");
             transform.localScale = Vector3.one * 2f;
         }
         else
