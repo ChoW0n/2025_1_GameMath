@@ -64,12 +64,12 @@ public class CombatSimulator : MonoBehaviour
     {
         float currentRate = totalCrit / (float)totalAttack;
         //보정 적용
-        if (pastCrit = true && currentRate < currentWeapon.critChance)
+        if (pastCrit == true && currentRate < currentWeapon.critChance)
         {
             //무조건 발생
             isCritical = true;
         }
-        else if (pastCrit = false && currentWeapon.critChance > currentRate)
+        else if (pastCrit == false && currentWeapon.critChance > currentRate)
         {
             //강제로 막기
             isCritical = false;

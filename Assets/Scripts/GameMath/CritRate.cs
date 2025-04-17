@@ -22,12 +22,12 @@ public class CritRate : MonoBehaviour
         bool isCritical;
 
         //보정 적용
-        if (pastCrit = true && currentRate < critRate)
+        if (pastCrit == true && currentRate < critRate)
         {
             //무조건 발생
             isCritical = true;
         }
-        else if (pastCrit = false && critRate > currentRate)
+        else if (pastCrit == false && critRate > currentRate)
         {
             //강제로 막기
             isCritical = false;
