@@ -12,13 +12,14 @@ public class MouseFollow3D_2 : MonoBehaviour
 
     void Update()
     {
-        // ¸¶¿ì½º ¿ìÅ¬¸¯ ¸ñÀûÁö ÁöÁ¤
+        // ë§ˆìš°ìŠ¤ ìš°í´ë¦­ ëª©ì ì§€ ì§€ì •
         if (Input.GetMouseButtonDown(1))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
                 Vector3 clickedPoint = hit.point;
+                clickedPoint.y += 1f;
 
                 if (currentTarget == null)
                 {
@@ -31,7 +32,7 @@ public class MouseFollow3D_2 : MonoBehaviour
             }
         }
 
-        // ÀÌµ¿ ÁßÀÏ ¶§
+        // ì´ë™ ì¤‘ì¼ ë•Œ
         if (currentTarget != null)
         {
             Vector3 target = currentTarget.Value;
@@ -39,7 +40,7 @@ public class MouseFollow3D_2 : MonoBehaviour
 
             if (Vector3.Distance(transform.position, target) < stopDistance)
             {
-                // µµÂøÇÏ¸é ´ÙÀ½ ¸ñÀûÁö ²¨³¿
+                // ë„ì°©í•˜ë©´ ë‹¤ìŒ ëª©ì ì§€ êº¼ëƒ„
                 if (moveQueue.Count > 0)
                 {
                     currentTarget = moveQueue.Dequeue();

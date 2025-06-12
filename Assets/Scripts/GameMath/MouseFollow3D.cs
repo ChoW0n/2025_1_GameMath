@@ -14,15 +14,16 @@ public class MouseFollow3D : MonoBehaviour
 
     void Update()
     {
-        //¸¶¿ì½º ¿ŞÂÊ ¹öÆ° Å¬¸¯
-        if(Input.GetMouseButtonDown(0))
+        //ë§ˆìš°ìŠ¤ ì™¼ìª½ ë²„íŠ¼ í´ë¦­
+        if(Input.GetMouseButtonDown(1))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
+            
             if (Physics.Raycast(ray, out hit))
             {
                 targetPosition = hit.point;
-                targetPosition = new Vector3(targetPosition.x, targetPosition.y + 0.5f, targetPosition.z);
+                targetPosition = new Vector3(targetPosition.x, targetPosition.y + 1f, targetPosition.z);
             }
         }
         
