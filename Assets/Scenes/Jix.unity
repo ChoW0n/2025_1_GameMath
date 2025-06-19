@@ -136,8 +136,10 @@ GameObject:
   - component: {fileID: 339406423}
   - component: {fileID: 339406422}
   - component: {fileID: 339406427}
+  - component: {fileID: 339406428}
   - component: {fileID: 339406421}
-  m_Layer: 0
+  - component: {fileID: 339406429}
+  m_Layer: 11
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +275,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccc00e0662f35747baa1abc329b5f42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  moveSpeed: 5
+  stopRadius: 0.05
+  heightOffset: 1
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 512
+--- !u!114 &339406428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339406420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76ab0b31c200c047a890398d7f76e61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombPrefab: {fileID: 744829200766576734, guid: 0f8fd1ab42c72db408b8fa33413a88c4, type: 3}
+  throwSpeed: 13
+  throwAngleDeg: 35
+  maxRange: 8
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 512
+--- !u!54 &339406429
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339406420}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &1564179659
 GameObject:
   m_ObjectHideFlags: 0
